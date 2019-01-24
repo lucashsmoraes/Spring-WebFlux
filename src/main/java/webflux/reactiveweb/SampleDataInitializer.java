@@ -1,7 +1,7 @@
 package webflux.reactiveweb;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
@@ -10,10 +10,9 @@ import reactor.core.publisher.Flux;
 import java.util.UUID;
 
 @Component
+@Log4j2
 @org.springframework.context.annotation.Profile("demo")
 class SampleDataInitializer implements ApplicationListener<ApplicationReadyEvent> {
-
-    private static Logger log = LoggerFactory.getLogger(Profile.class);
 
     private final ProfileRepository repository;
 
